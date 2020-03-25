@@ -19,13 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weather_banner" translatesAutoresizingMaskIntoConstraints="NO" id="5cm-XB-Ioh">
-                                <rect key="frame" x="29" y="148" width="356" height="93"/>
+                                <rect key="frame" x="29" y="107" width="356" height="93"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="93" id="R9M-7T-P1y"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="DGI-cM-uFx">
-                                <rect key="frame" x="29" y="272" width="356" height="112"/>
+                                <rect key="frame" x="29" y="230" width="356" height="112"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjp-jw-tMV">
                                         <rect key="frame" x="0.0" y="0.0" width="356" height="48"/>
@@ -50,10 +50,10 @@
                         <constraints>
                             <constraint firstItem="DGI-cM-uFx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="4Zb-94-plA"/>
                             <constraint firstItem="5cm-XB-Ioh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="CKE-Az-6Hc"/>
-                            <constraint firstItem="DGI-cM-uFx" firstAttribute="top" secondItem="5cm-XB-Ioh" secondAttribute="bottom" constant="31" id="DOT-8P-Sn4"/>
+                            <constraint firstItem="DGI-cM-uFx" firstAttribute="top" secondItem="5cm-XB-Ioh" secondAttribute="bottom" constant="30" id="DOT-8P-Sn4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5cm-XB-Ioh" secondAttribute="trailing" constant="29" id="Img-sr-sIN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DGI-cM-uFx" secondAttribute="trailing" constant="29" id="JJ2-Zp-yGW"/>
-                            <constraint firstItem="5cm-XB-Ioh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="Nph-ST-PUO"/>
+                            <constraint firstItem="5cm-XB-Ioh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="19" id="Nph-ST-PUO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
