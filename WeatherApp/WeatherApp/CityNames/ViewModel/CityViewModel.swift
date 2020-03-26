@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+protocol CityWeatherFetchable {
+    func fetchWeather(for city: String, completion: @escaping ([CityResponseModel]?) -> (Void))
+}
+
 class CityViewModel {
 
     fileprivate var cityResponseModels: [CityResponseModel]?
@@ -60,7 +64,7 @@ class CityViewModel {
 }
 
 //MARK: Network API Calls
-extension CityViewModel {
+    extension CityViewModel: CityWeatherFetchable {
     
     func resetDataSource() {
         cityResponseModels = nil

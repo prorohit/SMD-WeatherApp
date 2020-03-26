@@ -1,0 +1,43 @@
+{
+    "coord": {
+        "lon": 55.4,
+        "lat": 25.36
+    },
+    "weather": [
+        {
+            "id": 801,
+            "main": "Clouds",
+            "description": "few clouds",
+            "icon": "02d"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 295.7,
+        "feels_like": 294.65,
+        "temp_min": 293.71,
+        "temp_max": 297.15,
+        "pressure": 1014,
+        "humidity": 53
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 2.6,
+        "deg": 100
+    },
+    "clouds": {
+        "all": 14
+    },
+    "dt": 1585203938,
+    "sys": {
+        "type": 1,
+        "id": 7545,
+        "country": "AE",
+        "sunrise": 1585188949,
+        "sunset": 1585233120
+    },
+    "timezone": 14400,
+    "id": 292672,
+    "name": "Sharjah city",
+    "cod": 200
+}
