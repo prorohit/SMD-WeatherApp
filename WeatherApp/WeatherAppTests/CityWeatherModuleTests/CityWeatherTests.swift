@@ -33,6 +33,7 @@ class MockOrderFailureFetchable: CityWeatherFetchable {
 }
 
 class CityWeatherTests: XCTestCase {
+    let viewModel = CityViewModel()
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -50,25 +51,22 @@ class CityWeatherTests: XCTestCase {
     }
     
     func testInValidMinEntry() {
-        let viewModel = CityViewModel()
         let exp = viewModel.validateInput(text: "A,,,,,,,,")
         XCTAssert(exp.0 == false)
     }
     
     func testInValidMaxEntry() {
-        let viewModel = CityViewModel()
         let exp = viewModel.validateInput(text: "Dubai,Goa,Delhi,China,Turkey,Russai,Punjab,Mumbai")
         XCTAssert(exp.0 == false)
     }
     
     func testValidMaxEntry() {
-        let viewModel = CityViewModel()
         let exp = viewModel.validateInput(text: "Dubai,Goa,Delhi,China,Turkey,Russai,Punjab")
         XCTAssert(exp.0 == false)
     }
     
     func testValidEntry() {
-        let viewModel = CityViewModel()
+        viewModel.saveEnteredText("A,A,A,,")
         let exp = viewModel.validateInput(text: "A,A,A,,")
         XCTAssert(exp.0 == true)
     }
