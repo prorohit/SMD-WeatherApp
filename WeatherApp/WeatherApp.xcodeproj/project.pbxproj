@@ -27,7 +27,6 @@
 		819BEE6C242C59E2009E81C7 /* AppNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819BEE61242C59E1009E81C7 /* AppNetworkManager.swift */; };
 		819BEE6D242C59E2009E81C7 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819BEE62242C59E1009E81C7 /* Reachability.swift */; };
 		819BEE6F242C59E2009E81C7 /* AppConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819BEE64242C59E1009E81C7 /* AppConfigs.swift */; };
-		819BEE70242C59E2009E81C7 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819BEE65242C59E1009E81C7 /* AppConstants.swift */; };
 		819BEE71242C59E2009E81C7 /* AppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819BEE66242C59E1009E81C7 /* AppLogger.swift */; };
 		819BEE72242C59E2009E81C7 /* Buildable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819BEE67242C59E1009E81C7 /* Buildable.swift */; };
 		819BEE73242C59E2009E81C7 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819BEE68242C59E1009E81C7 /* AppEnvironment.swift */; };
@@ -89,7 +88,6 @@
 		819BEE61242C59E1009E81C7 /* AppNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNetworkManager.swift; sourceTree = "<group>"; };
 		819BEE62242C59E1009E81C7 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		819BEE64242C59E1009E81C7 /* AppConfigs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfigs.swift; sourceTree = "<group>"; };
-		819BEE65242C59E1009E81C7 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		819BEE66242C59E1009E81C7 /* AppLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLogger.swift; sourceTree = "<group>"; };
 		819BEE67242C59E1009E81C7 /* Buildable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buildable.swift; sourceTree = "<group>"; };
 		819BEE68242C59E1009E81C7 /* AppEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
@@ -316,7 +314,6 @@
 				819BEE5F242C59E1009E81C7 /* URLRequest+cURL.swift */,
 				819BEE67242C59E1009E81C7 /* Buildable.swift */,
 				819BEE61242C59E1009E81C7 /* AppNetworkManager.swift */,
-				819BEE65242C59E1009E81C7 /* AppConstants.swift */,
 				819BEE66242C59E1009E81C7 /* AppLogger.swift */,
 				819BEE68242C59E1009E81C7 /* AppEnvironment.swift */,
 			);
@@ -604,7 +601,6 @@
 				8160AA20242C5F960048ACC9 /* CityViewController.swift in Sources */,
 				819BEE71242C59E2009E81C7 /* AppLogger.swift in Sources */,
 				819BEE89242C86A6009E81C7 /* NSObject+Extension.swift in Sources */,
-				819BEE70242C59E2009E81C7 /* AppConstants.swift in Sources */,
 				819BEE8A242C86A6009E81C7 /* Date+Extension.swift in Sources */,
 				819BEE80242C84E7009E81C7 /* CityViewController+UITableView.swift in Sources */,
 				819BEE6F242C59E2009E81C7 /* AppConfigs.swift in Sources */,
