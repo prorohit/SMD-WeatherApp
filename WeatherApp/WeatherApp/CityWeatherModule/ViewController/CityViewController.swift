@@ -15,7 +15,6 @@ class CityViewController: AppBaseViewController {
     @IBOutlet weak var fetchCitiesInfoButton: UIButton!
     @IBOutlet weak var titleLableOfEntryInfo: UILabel!
     @IBOutlet weak var errorLabel: UILabel!
-    
     @IBOutlet weak var tableViewCitiesInfo: UITableView!
     
     //MARK: Variables
@@ -42,11 +41,11 @@ class CityViewController: AppBaseViewController {
     //MARK: Private Methods
     fileprivate func setupView() {
         navigationItem.title = "Cities Weather"
+        tableViewCitiesInfo.tableFooterView = UIView(frame: CGRect.zero)
         cityNamesTextView.delegate = self
         cityNamesTextView.text = placeholder
         cityNamesTextView.textColor = UIColor.lightGray
         cityNamesTextView.selectedTextRange = cityNamesTextView.textRange(from: cityNamesTextView.beginningOfDocument, to: cityNamesTextView.beginningOfDocument)
-        //        cityNamesTextView.text = "Dubai, Sharjah, Abu Dhabi"
     }
     
     fileprivate func congigureUI() {

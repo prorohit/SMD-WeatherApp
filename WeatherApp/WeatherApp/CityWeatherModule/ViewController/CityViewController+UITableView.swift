@@ -32,20 +32,21 @@ extension CityViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.row {
         case 0:
             
-            cell.textLabel?.text = "Weather Description: "
-                + (cityViewModel.weatherDescription(for: indexPath.section) ?? "N/A")
+            cell.textLabel?.text = "Weather Description: \n"
+                + (cityViewModel.weatherDescription(for: indexPath.section) ?? "N/A").capitalized
         case 1:
-            cell.textLabel?.text = "Min Temp: "
+            cell.textLabel?.text = "Min Temp: \n"
                 +  "\(cityViewModel.tempInfo(at: indexPath.section).min ?? 0)"
         case 2:
-            cell.textLabel?.text = "Max Temp: "
+            cell.textLabel?.text = "Max Temp: \n"
                 + "\(cityViewModel.tempInfo(at: indexPath.section).max ?? 0)"
         case 3:
-            cell.textLabel?.text = "Wind speed: "
-            + "\(cityViewModel.windSpeed(for: indexPath.section) ?? 0)"
+            cell.textLabel?.text = "Wind speed: \n"
+                + "\(cityViewModel.windSpeed(for: indexPath.section) ?? 0)"
         default:
             break
         }
+        cell.selectionStyle = .none
         cell.textLabel?.numberOfLines = 0
         return cell
     }

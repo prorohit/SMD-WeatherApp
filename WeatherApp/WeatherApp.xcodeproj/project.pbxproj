@@ -44,6 +44,12 @@
 		819BEE97242CA02B009E81C7 /* JSONUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819BEE95242CA02B009E81C7 /* JSONUtility.swift */; };
 		819BEE9A242CA416009E81C7 /* city_weather_success.json in Resources */ = {isa = PBXBuildFile; fileRef = 819BEE99242CA416009E81C7 /* city_weather_success.json */; };
 		819BEE9C242CA82C009E81C7 /* city_weather_failure.json in Resources */ = {isa = PBXBuildFile; fileRef = 819BEE9B242CA82B009E81C7 /* city_weather_failure.json */; };
+		819BEE9F242CBFAC009E81C7 /* GPSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819BEE9E242CBFAC009E81C7 /* GPSViewController.swift */; };
+		819BEEA1242CBFC6009E81C7 /* GPSViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819BEEA0242CBFC6009E81C7 /* GPSViewModel.swift */; };
+		819BEEA3242CBFD3009E81C7 /* GPSResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819BEEA2242CBFD3009E81C7 /* GPSResponseModel.swift */; };
+		819BEEA6242CD4DF009E81C7 /* GPSWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819BEEA5242CD4DF009E81C7 /* GPSWeatherService.swift */; };
+		819BEEA8242CE727009E81C7 /* GPSViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819BEEA7242CE727009E81C7 /* GPSViewController+UITableView.swift */; };
+		819BEEAC242CEC2D009E81C7 /* GPSWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819BEEAB242CEC2D009E81C7 /* GPSWeatherTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +114,12 @@
 		819BEE95242CA02B009E81C7 /* JSONUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONUtility.swift; sourceTree = "<group>"; };
 		819BEE99242CA416009E81C7 /* city_weather_success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city_weather_success.json; sourceTree = "<group>"; };
 		819BEE9B242CA82B009E81C7 /* city_weather_failure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city_weather_failure.json; sourceTree = "<group>"; };
+		819BEE9E242CBFAC009E81C7 /* GPSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSViewController.swift; sourceTree = "<group>"; };
+		819BEEA0242CBFC6009E81C7 /* GPSViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSViewModel.swift; sourceTree = "<group>"; };
+		819BEEA2242CBFD3009E81C7 /* GPSResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSResponseModel.swift; sourceTree = "<group>"; };
+		819BEEA5242CD4DF009E81C7 /* GPSWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSWeatherService.swift; sourceTree = "<group>"; };
+		819BEEA7242CE727009E81C7 /* GPSViewController+UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GPSViewController+UITableView.swift"; sourceTree = "<group>"; };
+		819BEEAB242CEC2D009E81C7 /* GPSWeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSWeatherTableViewCell.swift; sourceTree = "<group>"; };
 		B9BBD9713E17CDEA80692A7C /* Pods-WeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.debug.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C19070E57C440F476C20C74E /* Pods-WeatherAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherAppTests.debug.xcconfig"; path = "Target Support Files/Pods-WeatherAppTests/Pods-WeatherAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D857C3E0066A26C16B4479F2 /* Pods_WeatherApp_WeatherAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherApp_WeatherAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,7 +206,7 @@
 				819BEE22242BCF9A009E81C7 /* AppDelegate.swift */,
 				819BEE24242BCF9A009E81C7 /* ViewController.swift */,
 				819BEE77242C75E6009E81C7 /* BaseViewController */,
-				819BEE53242C55A3009E81C7 /* CityNames */,
+				819BEE53242C55A3009E81C7 /* CityWeatherModule */,
 				819BEE58242C599F009E81C7 /* GPSModule */,
 				819BEE5D242C59E1009E81C7 /* AppNetwork+Helpers */,
 				819BEE26242BCF9A009E81C7 /* Main.storyboard */,
@@ -236,7 +248,7 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		819BEE53242C55A3009E81C7 /* CityNames */ = {
+		819BEE53242C55A3009E81C7 /* CityWeatherModule */ = {
 			isa = PBXGroup;
 			children = (
 				819BEE81242C85A8009E81C7 /* CustomViews */,
@@ -245,7 +257,7 @@
 				819BEE55242C593D009E81C7 /* ViewModel */,
 				819BEE56242C5947009E81C7 /* ViewController */,
 			);
-			path = CityNames;
+			path = CityWeatherModule;
 			sourceTree = "<group>";
 		};
 		819BEE54242C5935009E81C7 /* Model */ = {
@@ -277,9 +289,10 @@
 		819BEE58242C599F009E81C7 /* GPSModule */ = {
 			isa = PBXGroup;
 			children = (
+				819BEEAA242CEA71009E81C7 /* CustomCells */,
+				819BEEA4242CD4C5009E81C7 /* Service */,
 				819BEE59242C599F009E81C7 /* ViewModel */,
 				819BEE5A242C599F009E81C7 /* Model */,
-				819BEE5B242C599F009E81C7 /* View */,
 				819BEE5C242C599F009E81C7 /* ViewController */,
 			);
 			path = GPSModule;
@@ -288,6 +301,7 @@
 		819BEE59242C599F009E81C7 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				819BEEA0242CBFC6009E81C7 /* GPSViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -295,20 +309,16 @@
 		819BEE5A242C599F009E81C7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				819BEEA2242CBFD3009E81C7 /* GPSResponseModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		819BEE5B242C599F009E81C7 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		819BEE5C242C599F009E81C7 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				819BEE9E242CBFAC009E81C7 /* GPSViewController.swift */,
+				819BEEA7242CE727009E81C7 /* GPSViewController+UITableView.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -396,6 +406,22 @@
 				819BEE9B242CA82B009E81C7 /* city_weather_failure.json */,
 			);
 			path = CityWeather;
+			sourceTree = "<group>";
+		};
+		819BEEA4242CD4C5009E81C7 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				819BEEA5242CD4DF009E81C7 /* GPSWeatherService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		819BEEAA242CEA71009E81C7 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				819BEEAB242CEC2D009E81C7 /* GPSWeatherTableViewCell.swift */,
+			);
+			path = CustomCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -645,18 +671,23 @@
 				819BEE71242C59E2009E81C7 /* AppLogger.swift in Sources */,
 				819BEE89242C86A6009E81C7 /* NSObject+Extension.swift in Sources */,
 				819BEE8A242C86A6009E81C7 /* Date+Extension.swift in Sources */,
+				819BEEA1242CBFC6009E81C7 /* GPSViewModel.swift in Sources */,
 				819BEE80242C84E7009E81C7 /* CityViewController+UITableView.swift in Sources */,
 				819BEE6F242C59E2009E81C7 /* AppConfigs.swift in Sources */,
 				8160AA24242C5FC40048ACC9 /* CityResponseModel.swift in Sources */,
+				819BEEA6242CD4DF009E81C7 /* GPSWeatherService.swift in Sources */,
 				819BEE8B242C86A6009E81C7 /* UIColor+Extension.swift in Sources */,
 				8160AA22242C5FB60048ACC9 /* CityViewModel.swift in Sources */,
 				8160AA26242C61550048ACC9 /* CityViewController+UITextView.swift in Sources */,
 				819BEE76242C69E3009E81C7 /* String+Extension.swift in Sources */,
 				819BEE52242BD29A009E81C7 /* AppLoader.swift in Sources */,
 				819BEE73242C59E2009E81C7 /* AppEnvironment.swift in Sources */,
+				819BEEA3242CBFD3009E81C7 /* GPSResponseModel.swift in Sources */,
 				819BEE84242C85E5009E81C7 /* CityNameSectionTitleView.swift in Sources */,
 				819BEE25242BCF9A009E81C7 /* ViewController.swift in Sources */,
+				819BEEA8242CE727009E81C7 /* GPSViewController+UITableView.swift in Sources */,
 				819BEE7B242C7655009E81C7 /* AlertViewUtility.swift in Sources */,
+				819BEEAC242CEC2D009E81C7 /* GPSWeatherTableViewCell.swift in Sources */,
 				819BEE23242BCF9A009E81C7 /* AppDelegate.swift in Sources */,
 				819BEE7E242C76DA009E81C7 /* CityService.swift in Sources */,
 				819BEE6A242C59E2009E81C7 /* URLRequest+cURL.swift in Sources */,
@@ -665,6 +696,7 @@
 				819BEE69242C59E2009E81C7 /* Logger.swift in Sources */,
 				819BEE72242C59E2009E81C7 /* Buildable.swift in Sources */,
 				819BEE79242C75F7009E81C7 /* AppBaseViewController.swift in Sources */,
+				819BEE9F242CBFAC009E81C7 /* GPSViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
