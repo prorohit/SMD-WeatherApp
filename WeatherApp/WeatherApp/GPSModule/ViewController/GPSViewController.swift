@@ -95,6 +95,11 @@ final class GPSViewController: AppBaseViewController {
 //MARK: Network API Calls
 extension GPSViewController {
     fileprivate func fetchInformation(of cityName: String) {
+        showNoInternetConnectionAlert { [weak self] in
+            self?.gpsViewModel.resetDataSource()
+            self?.tableViewInfo.reloadData()
+            return
+        }
         gpsViewModel.resetDataSource()
         AppLoader().showProgress(status: nil)
         gpsViewModel.fetchGPSWeather(for: cityName) { [weak self] (response) -> (Void) in
