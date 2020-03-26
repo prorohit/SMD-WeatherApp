@@ -6,8 +6,6 @@
 import UIKit
 
 // MARK: - Definitions -
-let applicationId = "IOS"
-
 enum AppApiTimeinterval {
     case sixty
     case ninty
@@ -28,16 +26,15 @@ enum AppHTTPMethod: String {
 }
 
 enum SubPathType: String {
-    case comingSoon
-    case oAuth
+    case cityInfo
+    case gpsLocationInfo
     
     var value: String {
         switch self {
-        case .comingSoon: return "coming-soon"
-        case .oAuth: return "oauth"
+        case .cityInfo: return "weather"
+        case .gpsLocationInfo: return "forecast"
         }
     }
-    
 }
 
 // MARK: - Type -
@@ -47,7 +44,7 @@ protocol Buildable {
     var headers: [String: String] { get }
     var requestBody: [String: Any]? { get }
     var subPath: SubPathType { get }
-    
+    var version: String { get }
     var url: URL? { get }
     func build() -> URLRequest?
 }
@@ -55,7 +52,8 @@ protocol Buildable {
 extension Buildable {
     
     private var path: String {
-        return [AppEnvironment.baseURL, subPath.value, endPoint].joined(separator: "/")
+        let finalEndPoint = (endPoint.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") + "&appid=\(AppConfigs.shared.apiKey)"
+        return [AppEnvironment.baseURL, version, subPath.value, finalEndPoint].joined(separator: "/")
     }
 
     var methodType: AppHTTPMethod {
@@ -63,13 +61,7 @@ extension Buildable {
     }
     
     var headers: [String: String] {
-
-        var headers: [String: String] = [:]
-    
-        headers["appId"]        = applicationId
-        headers["Token"]   = "token"
-        headers["Content-Type"] = "application/json"
-        headers["Accept"] = "application/json"
+        let headers: [String: String] = [:]
         return headers
     }
     

@@ -6,12 +6,19 @@
 
 import UIKit
 
-let apiKey = "287247cce4410857d4e8ae6c74d9ac01"
 
 class AppConfigs {
 
 // MARK: - Properties
     fileprivate init() {}
     static let shared: AppConfigs = AppConfigs()
-    var shouldPrintLogs = false
+    let apiKey = "287247cce4410857d4e8ae6c74d9ac01"
+
+    var shouldPrintLogs: Bool {
+        #if DEBUG
+        return true
+        #else
+        return false
+        #endif
+    }
 }

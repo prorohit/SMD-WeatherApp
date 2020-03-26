@@ -11,9 +11,9 @@ public struct AppEnvironment {
     
     static var baseURL: String {
         #if DEBUG
-        return ""
+        return "https://api.openweathermap.org/data"
         #else
-        return ""
+        return "https://api.openweathermap.org/data"
         #endif
     }
 }

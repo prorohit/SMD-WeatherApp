@@ -69,20 +69,87 @@
             </objects>
             <point key="canvasLocation" x="1088" y="94"/>
         </scene>
-        <!--View Controller-->
+        <!--City View Controller-->
         <scene sceneID="3Cm-O1-BIX">
             <objects>
-                <viewController id="Svk-tV-q80" sceneMemberID="viewController">
+                <viewController id="Svk-tV-q80" customClass="CityViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jN4-ww-7W5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="2qd-GB-j2E">
+                                <rect key="frame" x="20" y="118" width="374" height="262.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can enter min. 3 and max. 7 city names separated by comma (,)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRS-wJ-Hr6">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="38.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <color key="textColor" red="0.039215686270000001" green="0.26274509800000001" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kuu-ol-zHZ">
+                                        <rect key="frame" x="0.0" y="54.5" width="374" height="128"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="glZ-xF-DSl"/>
+                                        </constraints>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYD-Fs-eKc">
+                                        <rect key="frame" x="0.0" y="198.5" width="374" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <color key="textColor" red="0.86666666670000003" green="0.13725490200000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VeC-an-8Zr">
+                                        <rect key="frame" x="0.0" y="214.5" width="374" height="48"/>
+                                        <color key="backgroundColor" red="0.039215686270000001" green="0.26274509800000001" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="WW8-r1-CWK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <state key="normal" title="Fetch Weather Information">
+                                            <color key="titleColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tapFetchCitiesInfoButton:" destination="Svk-tV-q80" eventType="touchUpInside" id="0aZ-rg-Iav"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3MJ-n6-1Mg">
+                                <rect key="frame" x="20" y="403" width="374" height="459"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Svk-tV-q80" id="2ri-zC-L72"/>
+                                    <outlet property="delegate" destination="Svk-tV-q80" id="WJe-xg-oqj"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zH2-76-RV8" firstAttribute="trailing" secondItem="3MJ-n6-1Mg" secondAttribute="trailing" constant="20" id="13f-gg-8tY"/>
+                            <constraint firstItem="zH2-76-RV8" firstAttribute="bottom" secondItem="3MJ-n6-1Mg" secondAttribute="bottom" id="ApI-Lh-IcR"/>
+                            <constraint firstItem="zH2-76-RV8" firstAttribute="trailing" secondItem="2qd-GB-j2E" secondAttribute="trailing" constant="20" id="GiP-Z6-lBY"/>
+                            <constraint firstItem="3MJ-n6-1Mg" firstAttribute="leading" secondItem="zH2-76-RV8" secondAttribute="leading" constant="20" id="Gxb-3z-6jC"/>
+                            <constraint firstItem="3MJ-n6-1Mg" firstAttribute="top" secondItem="2qd-GB-j2E" secondAttribute="bottom" constant="22.5" id="Jg1-ov-NTV"/>
+                            <constraint firstItem="2qd-GB-j2E" firstAttribute="top" secondItem="zH2-76-RV8" secondAttribute="top" constant="30" id="hLQ-X9-BF6"/>
+                            <constraint firstItem="2qd-GB-j2E" firstAttribute="leading" secondItem="zH2-76-RV8" secondAttribute="leading" constant="20" id="kC5-fj-z3l"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zH2-76-RV8"/>
                     </view>
+                    <connections>
+                        <outlet property="cityNamesTextView" destination="kuu-ol-zHZ" id="EYj-Uc-OXn"/>
+                        <outlet property="errorLabel" destination="JYD-Fs-eKc" id="SxX-bW-g2J"/>
+                        <outlet property="fetchCitiesInfoButton" destination="VeC-an-8Zr" id="Uwc-l7-fJ5"/>
+                        <outlet property="tableViewCitiesInfo" destination="3MJ-n6-1Mg" id="JL4-HR-zNV"/>
+                        <outlet property="titleLableOfEntryInfo" destination="bRS-wJ-Hr6" id="tlt-Xg-okr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9H-Tt-vor" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1946" y="-281"/>
+            <point key="canvasLocation" x="1944.9275362318842" y="-281.25"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="HlB-Oi-YGx">
