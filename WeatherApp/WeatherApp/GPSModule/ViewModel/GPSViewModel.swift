@@ -20,7 +20,7 @@ protocol GPSWeatherFetchable {
 final class GPSViewModel {
     
     fileprivate var cityListResponseModels: [List]?
-    fileprivate var filteredDataSource = [DataSource]()
+    var filteredDataSource = [DataSource]()
     
     var numberOfSections: Int {
         return filteredDataSource.count
@@ -49,7 +49,7 @@ final class GPSViewModel {
 
 extension GPSViewModel: GPSWeatherFetchable {
    
-    func resetDataSource() {
+    func resetGPSWeatherDataSource() {
         cityListResponseModels = nil
         cityListResponseModels = []
     }
@@ -57,20 +57,25 @@ extension GPSViewModel: GPSWeatherFetchable {
     func fetchGPSWeather(for city: String, completion: @escaping ([DataSource]?) -> (Void)) {
         AppNetworkManager().processAPI(GPSWeatherService.getGPSWeather(city: city),
                                        modelType: GPSResponseModel.self) { [weak self] (response) in
+                                        self?.resetGPSWeatherDataSource()
                                         switch response {
                                         case .success(let model):
                                             guard let lists = model.list else {
                                                 completion(nil)
                                                 return
                                             }
-                                            self?.transformDataSource(lists: lists)
-                                            self?.prepareFilteredDataSource(uniqueDates: self?.findUniqueDates() ?? [])
+                                            self?.filteredDataSource = self?.transformingDataIntoPresentableState(lists: lists) ?? []
                                             break
                                         case .failure(_):
                                             break
                                         }
                                         completion(self?.filteredDataSource)
         }
+    }
+
+    func transformingDataIntoPresentableState(lists: [List]) -> [DataSource] {
+        self.transformDataSource(lists: lists)
+        return self.prepareFilteredDataSource(uniqueDates: self.findUniqueDates())
     }
     
     fileprivate func transformDataSource(lists: [List]) {
@@ -98,13 +103,15 @@ extension GPSViewModel: GPSWeatherFetchable {
         return uniqueValues
     }
     
-    fileprivate func prepareFilteredDataSource(uniqueDates: [String]) {
+    fileprivate func prepareFilteredDataSource(uniqueDates: [String]) -> [DataSource] {
+        var filteredData = [DataSource]()
         guard let lists = cityListResponseModels else {
-            return
+            return filteredData
         }
         uniqueDates.forEach { (uniqueValue) in
             let filteredArray = lists.filter({($0.dtTxt ?? "") == uniqueValue})
-            filteredDataSource.append(DataSource(date: uniqueValue, lists: filteredArray))
+            filteredData.append(DataSource(date: uniqueValue, lists: filteredArray))
         }
+        return filteredData
     }
 }

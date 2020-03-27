@@ -50,6 +50,9 @@
 		819BEEA6242CD4DF009E81C7 /* GPSWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819BEEA5242CD4DF009E81C7 /* GPSWeatherService.swift */; };
 		819BEEA8242CE727009E81C7 /* GPSViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819BEEA7242CE727009E81C7 /* GPSViewController+UITableView.swift */; };
 		819BEEAC242CEC2D009E81C7 /* GPSWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819BEEAB242CEC2D009E81C7 /* GPSWeatherTableViewCell.swift */; };
+		819BEEAF242DB7DB009E81C7 /* GPSModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819BEEAE242DB7DB009E81C7 /* GPSModuleTests.swift */; };
+		819BEEB3242DBCF2009E81C7 /* gps_weather_failure.json in Resources */ = {isa = PBXBuildFile; fileRef = 819BEEB1242DBCF2009E81C7 /* gps_weather_failure.json */; };
+		819BEEB4242DBCF2009E81C7 /* gps_weather_success.json in Resources */ = {isa = PBXBuildFile; fileRef = 819BEEB2242DBCF2009E81C7 /* gps_weather_success.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +123,9 @@
 		819BEEA5242CD4DF009E81C7 /* GPSWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSWeatherService.swift; sourceTree = "<group>"; };
 		819BEEA7242CE727009E81C7 /* GPSViewController+UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GPSViewController+UITableView.swift"; sourceTree = "<group>"; };
 		819BEEAB242CEC2D009E81C7 /* GPSWeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSWeatherTableViewCell.swift; sourceTree = "<group>"; };
+		819BEEAE242DB7DB009E81C7 /* GPSModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSModuleTests.swift; sourceTree = "<group>"; };
+		819BEEB1242DBCF2009E81C7 /* gps_weather_failure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gps_weather_failure.json; sourceTree = "<group>"; };
+		819BEEB2242DBCF2009E81C7 /* gps_weather_success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gps_weather_success.json; sourceTree = "<group>"; };
 		B9BBD9713E17CDEA80692A7C /* Pods-WeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.debug.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C19070E57C440F476C20C74E /* Pods-WeatherAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherAppTests.debug.xcconfig"; path = "Target Support Files/Pods-WeatherAppTests/Pods-WeatherAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D857C3E0066A26C16B4479F2 /* Pods_WeatherApp_WeatherAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherApp_WeatherAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -225,6 +231,7 @@
 				819BEE98242CA398009E81C7 /* JsonMocks */,
 				819BEE93242CA02B009E81C7 /* Utilities */,
 				819BEE90242C9FB9009E81C7 /* CityWeatherModuleTests */,
+				819BEEAD242DB7B9009E81C7 /* GPSModuleTests */,
 				819BEE39242BCF9B009E81C7 /* Info.plist */,
 			);
 			path = WeatherAppTests;
@@ -394,6 +401,7 @@
 		819BEE98242CA398009E81C7 /* JsonMocks */ = {
 			isa = PBXGroup;
 			children = (
+				819BEEB0242DBCF2009E81C7 /* GPSWeather */,
 				819BEE9D242CAD30009E81C7 /* CityWeather */,
 			);
 			path = JsonMocks;
@@ -422,6 +430,23 @@
 				819BEEAB242CEC2D009E81C7 /* GPSWeatherTableViewCell.swift */,
 			);
 			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		819BEEAD242DB7B9009E81C7 /* GPSModuleTests */ = {
+			isa = PBXGroup;
+			children = (
+				819BEEAE242DB7DB009E81C7 /* GPSModuleTests.swift */,
+			);
+			path = GPSModuleTests;
+			sourceTree = "<group>";
+		};
+		819BEEB0242DBCF2009E81C7 /* GPSWeather */ = {
+			isa = PBXGroup;
+			children = (
+				819BEEB1242DBCF2009E81C7 /* gps_weather_failure.json */,
+				819BEEB2242DBCF2009E81C7 /* gps_weather_success.json */,
+			);
+			path = GPSWeather;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -545,6 +570,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				819BEE9C242CA82C009E81C7 /* city_weather_failure.json in Resources */,
+				819BEEB4242DBCF2009E81C7 /* gps_weather_success.json in Resources */,
+				819BEEB3242DBCF2009E81C7 /* gps_weather_failure.json in Resources */,
 				819BEE9A242CA416009E81C7 /* city_weather_success.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -706,6 +733,7 @@
 			files = (
 				819BEE97242CA02B009E81C7 /* JSONUtility.swift in Sources */,
 				819BEE92242C9FE7009E81C7 /* CityWeatherTests.swift in Sources */,
+				819BEEAF242DB7DB009E81C7 /* GPSModuleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

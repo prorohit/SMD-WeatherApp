@@ -17,7 +17,7 @@ class MockCityWeatherInfo {
     }
 }
 
-class MockOrderSuccessFetchable: CityWeatherFetchable {
+class MockCityWeatherSuccessFetchable: CityWeatherFetchable {
     func fetchWeather(for city: String, completion: @escaping ([CityResponseModel]?) -> (Void)) {
         let model = MockCityWeatherInfo().fetchCityWeather(path: "city_weather_success")
         completion(model)
@@ -25,7 +25,7 @@ class MockOrderSuccessFetchable: CityWeatherFetchable {
     
 }
 
-class MockOrderFailureFetchable: CityWeatherFetchable {
+class MockCityWeatherFailureFetchable: CityWeatherFetchable {
     func fetchWeather(for city: String, completion: @escaping ([CityResponseModel]?) -> (Void)) {
         let model = MockCityWeatherInfo().fetchCityWeather(path: "city_weather_failure")
         completion(model)
@@ -72,7 +72,7 @@ class CityWeatherTests: XCTestCase {
     }
 
     func testSuccessCityWeather() {
-        let object = MockOrderSuccessFetchable()
+        let object = MockCityWeatherSuccessFetchable()
         object.fetchWeather(for: "Sharjah") { (models) -> (Void) in
             XCTAssert(models!.count > 0)
             XCTAssert(models!.first!.cod! == 200)
@@ -118,10 +118,8 @@ class CityWeatherTests: XCTestCase {
         }
     }
     
-   
-    
     func testFailureCityWeather() {
-        let object = MockOrderFailureFetchable()
+        let object = MockCityWeatherFailureFetchable()
         object.fetchWeather(for: "AOO") { (models) -> (Void) in
             XCTAssert(models!.first!.cod == 404)
         }
