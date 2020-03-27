@@ -105,8 +105,20 @@ class CityWeatherTests: XCTestCase {
             // Weather Description
             XCTAssertNotNil(models!.first!.weather!)
             XCTAssert(models!.first!.weather!.first!.weatherDescription == "few clouds")
+            self.viewModel.resetDataSource()
+            self.viewModel.perpareDataSource(model: models!.first!)
+            XCTAssert(self.viewModel.numberOfSections == 1)
+            XCTAssert(self.viewModel.numberOfRows == 4)
+            XCTAssert(self.viewModel.sectionTitle(for: (self.viewModel.numberOfSections - 1)) == "Sharjah city")
+            XCTAssert(self.viewModel.tempInfo(at: self.viewModel.numberOfSections - 1).min == 293.71)
+            XCTAssert(self.viewModel.tempInfo(at: self.viewModel.numberOfSections - 1).max == 297.15)
+            XCTAssert(self.viewModel.weatherDescription(for: (self.viewModel.numberOfSections - 1)) == "few clouds")
+            XCTAssert(self.viewModel.windSpeed(for: (self.viewModel.numberOfSections - 1)) == 2.6)
+
         }
     }
+    
+   
     
     func testFailureCityWeather() {
         let object = MockOrderFailureFetchable()
@@ -116,7 +128,7 @@ class CityWeatherTests: XCTestCase {
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        self.viewModel.resetDataSource()
     }
 
 }

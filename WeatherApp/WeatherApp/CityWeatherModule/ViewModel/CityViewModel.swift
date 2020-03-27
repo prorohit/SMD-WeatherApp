@@ -14,7 +14,7 @@ protocol CityWeatherFetchable {
 }
 
 class CityViewModel {
-
+    
     fileprivate var cityResponseModels: [CityResponseModel]?
     fileprivate var updatedText: String?
     fileprivate let minNumberOfCitiesAllowed = 3
@@ -64,7 +64,7 @@ class CityViewModel {
 }
 
 //MARK: Network API Calls
-    extension CityViewModel: CityWeatherFetchable {
+extension CityViewModel: CityWeatherFetchable {
     
     func resetDataSource() {
         cityResponseModels = nil
@@ -76,13 +76,17 @@ class CityViewModel {
                                        modelType: CityResponseModel.self) { [weak self] (response) in
                                         switch response {
                                         case .success(let model):
-                                            self?.cityResponseModels?.append(model)
+                                            self?.perpareDataSource(model: model)
                                             break
                                         case .failure(_):
                                             break
                                         }
                                         completion(self?.cityResponseModels )
         }
+    }
+    
+    func perpareDataSource(model: CityResponseModel) {
+        self.cityResponseModels?.append(model)
     }
     
     var numberOfSections: Int {
