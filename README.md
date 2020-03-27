@@ -11,7 +11,7 @@ Weather App
 # Test Cases:
 1. Unit Test Cases has been written in order to cover the business logic written in the View models.
 2. Test case coverage report is also generated as shown below:
-https://github.com/prorohit/SMD-WeatherApp/blob/master/ScreenShots/TestCoverage.png
+    https://github.com/prorohit/SMD-WeatherApp/blob/master/ScreenShots/TestCoverage.png
 
 # Cities weather information separated by comma (,)
 https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22
