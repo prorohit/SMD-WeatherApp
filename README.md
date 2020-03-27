@@ -25,7 +25,12 @@ Weather App
     
 # Project UI work flow
 
-1. 
+1. https://github.com/prorohit/SMD-WeatherApp/blob/master/ScreenShots/UI/1.PNG
+2. https://github.com/prorohit/SMD-WeatherApp/blob/master/ScreenShots/UI/2.PNG
+3. https://github.com/prorohit/SMD-WeatherApp/blob/master/ScreenShots/UI/3.PNG
+4. https://github.com/prorohit/SMD-WeatherApp/blob/master/ScreenShots/UI/4.PNG
+5. https://github.com/prorohit/SMD-WeatherApp/blob/master/ScreenShots/UI/5.PNG
+6. https://github.com/prorohit/SMD-WeatherApp/blob/master/ScreenShots/UI/6.PNG
 
 # Part 1 - Cities weather information separated by comma (,)
 #1 Copy the following cURL in the postman to test the API
