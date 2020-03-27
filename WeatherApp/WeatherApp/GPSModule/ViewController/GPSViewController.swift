@@ -34,6 +34,7 @@ final class GPSViewController: AppBaseViewController {
     //MARK: Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "GPS City Weather"
         if !isLocationServiceEnabled {
             showAlertIfLocationServicesDisabledInIphone()
         } else {
@@ -47,6 +48,7 @@ final class GPSViewController: AppBaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tableViewInfo.tableFooterView = UIView(frame: CGRect.zero)
         cityNameLabel.text = nil
         cityName = nil
     }
@@ -99,7 +101,7 @@ extension GPSViewController {
             self?.tableViewInfo.reloadData()
             return
         }
-        AppLoader().showProgress(status: nil)
+        AppLoader().showProgress(status: "Fetching city weather info..")
         gpsViewModel.fetchGPSWeather(for: cityName) { [weak self] (response) -> (Void) in
             AppLoader().hideProgress()
             DispatchQueue.main.async {

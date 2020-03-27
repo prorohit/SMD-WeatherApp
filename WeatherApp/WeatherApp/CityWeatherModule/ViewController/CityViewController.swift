@@ -36,6 +36,9 @@ class CityViewController: AppBaseViewController {
         super.viewDidLoad()
         setupView()
         congigureUI()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureMethod))
+        tapGesture.numberOfTouchesRequired = 1
+        view.addGestureRecognizer(tapGesture)
     }
     
     //MARK: Private Methods
@@ -48,6 +51,10 @@ class CityViewController: AppBaseViewController {
         cityNamesTextView.selectedTextRange = cityNamesTextView.textRange(from: cityNamesTextView.beginningOfDocument, to: cityNamesTextView.beginningOfDocument)
     }
     
+    @objc func tapGestureMethod() {
+        self.view.endEditing(true)
+    }
+    
     fileprivate func congigureUI() {
         cityNamesTextView.layer.borderColor = UIColor.lightGray.cgColor
         cityNamesTextView.layer.borderWidth = CGFloat(Constants.textViewBorderWidth)
@@ -58,7 +65,6 @@ class CityViewController: AppBaseViewController {
     //MARK: IBActions
     @IBAction func tapFetchCitiesInfoButton(_ sender: UIButton) {
         self.view.endEditing(true)
-        print(cityViewModel.extractCityNames())
         if !cityViewModel.validateInput().0 {
             errorLabel.text = cityViewModel.validateInput().1
             errorLabel.textColor = cityViewModel.validateInput().2
