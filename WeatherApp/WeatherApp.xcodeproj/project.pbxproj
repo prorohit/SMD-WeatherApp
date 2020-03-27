@@ -908,7 +908,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.carrefour.mobile;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smd.tesapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = Carrefour_Native_UAE_Enterprise_Dev_Profile;
 				SWIFT_VERSION = 5.0;
@@ -928,7 +928,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.carrefour.mobile;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smd.tesapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = Carrefour_Native_UAE_Enterprise_Dev_Profile;
 				SWIFT_VERSION = 5.0;
